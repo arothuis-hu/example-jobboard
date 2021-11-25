@@ -1,0 +1,552 @@
+{
+	"info": {
+		"_postman_id": "7ca492db-0247-446a-b0fa-bc91f8d6b441",
+		"name": "BEP3 Jobboard Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "candidates",
+			"item": [
+				{
+					"name": "Register candidate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tim Kandidaat2\",\r\n    \"email\": \"example@example.test\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/candidates",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unregister candidate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/candidates/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"candidates",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "b46a0eca-21a1-472c-a208-e0e7f6334c92"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add keyword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"keyword\": \"Java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/candidates/:id/keyword",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"candidates",
+								":id",
+								"keyword"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "f73a5320-fd6d-49c7-9a0e-140ce71d215f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove keyword",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"keyword\": \"Java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/candidates/:id/keyword",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"candidates",
+								":id",
+								"keyword"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "b46a0eca-21a1-472c-a208-e0e7f6334c92"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rename candidate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hendrik Kandidaat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/candidates/:id/rename",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"candidates",
+								":id",
+								"rename"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "49034018-a035-45ff-80a9-3d6926fc36f4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Correct date of birth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateOfBirth\": \"2000-05-29\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/candidates/:id/correct-date-of-birth",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"candidates",
+								":id",
+								"correct-date-of-birth"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "49034018-a035-45ff-80a9-3d6926fc36f4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find candidate by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/candidates/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"candidates",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "f070d9f9-6e54-4247-a604-91c7cf4d083e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List candidates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/candidates",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"candidates"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "keywords",
+									"disabled": true
+								},
+								{
+									"key": "direction",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "apl",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "jobs",
+			"item": [
+				{
+					"name": "Post job",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": \"Example Inc.\",\r\n    \"function\": \"Software Engineer\",\r\n    \"description\": \"Defying CAP theorem, FLP impossibility and the Byzantine Generals Problem\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unlist job",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"keyword\": \"Java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/jobs/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"jobs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "dc76174a-e0a0-4d45-91cd-b2228faaf0d0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add keyword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"keyword\": \"Java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/jobs/:id/keyword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"jobs",
+								":id",
+								"keyword"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "d691ba2b-6612-431a-ac93-994886fccff9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Keyword",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"keyword\": \"Java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/jobs/:id/keyword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"jobs",
+								":id",
+								"keyword"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "d691ba2b-6612-431a-ac93-994886fccff9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change function",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"function\": \"Software Magician\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/jobs/:id/change-function",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"jobs",
+								":id",
+								"change-function"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "31da50b1-2d92-462a-9d9d-d4344f7cb428"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change description",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Making sense of distributed systems\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/jobs/:id/change-description",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"jobs",
+								":id",
+								"change-description"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "31da50b1-2d92-462a-9d9d-d4344f7cb428"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find job by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/jobs/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"jobs",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/jobs",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "keywords",
+			"item": [
+				{
+					"name": "Give overview for keywords",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/keywords/:keyword",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"keywords",
+								":keyword"
+							],
+							"variable": [
+								{
+									"key": "keyword",
+									"value": "Java"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
