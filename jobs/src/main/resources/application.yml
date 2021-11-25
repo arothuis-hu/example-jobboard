@@ -1,0 +1,32 @@
+# Application-specific configuration
+messaging:
+  exchange:
+    jobboard: jobboard
+  queue:
+    candidate-keywords: candidate-keywords
+    job-keywords: job-keywords
+    all-keywords: all-keywords
+  routing-key:
+    candidate-keywords: keywords.candidate.#
+    job-keywords: keywords.job.#
+    all-keywords: keywords.#
+# Web
+server:
+  port: 8081
+# MongoDB (see: development/docker-compose.yml)
+# N.B: Add auth in production (use env vars)
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: jobs
+      username: admin
+      password: admin
+      auto-index-creation: true
+# RabbitMQ (see: development/docker-compose.yml and RabbitMqConfiguration)
+# N.B: Add auth in production (use env vars)
+  rabbitmq:
+    host: localhost
+    port: 5672
+    publisher-confirm-type: simple
